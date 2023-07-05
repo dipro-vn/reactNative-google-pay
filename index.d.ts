@@ -33,6 +33,23 @@ export interface RequestDataType {
   merchantName: string
 }
 
+export interface ResponseDataType {
+  apiVersion?: number,
+  apiVersionMinor?: number,
+  paymentMethodData?: {
+    type?: string,
+    description?: string,
+    info?: {
+      cardNetwork?: string,
+      cardDetails?: string|number
+    },
+    tokenizationData?: {
+      type?: string,
+      token?: string
+    }
+  }
+}
+
 declare class GooglePay {
   static ENVIRONMENT_TEST: EnvironmentType
   static ENVIRONMENT_PRODUCTION: EnvironmentType
@@ -41,7 +58,7 @@ declare class GooglePay {
     allowedCardNetworks: AllowedCardNetworkType[],
     allowedCardAuthMethods: AllowedCardAuthMethodsType[]
   ) => Promise<boolean>
-  static requestPayment: (requestData: RequestDataType) => Promise<string>
+  static requestPayment: (requestData: RequestDataType) => Promise<string | ResponseDataType>
 }
 
 export { GooglePay }
