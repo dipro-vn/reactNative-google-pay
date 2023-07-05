@@ -1,4 +1,4 @@
-# rn-google-pay
+# rn-gpay
 
 <div>
 <img width="280px" src="emulator.gif" />
@@ -14,7 +14,7 @@
 
 ## Getting started
 
-`$ yarn add rn-google-pay`
+`$ yarn add rn-gpay`
 
 ## Linking
 
@@ -26,7 +26,7 @@ Autolinking will just do the job.
 
 ### Mostly automatic installation
 
-`$ react-native link rn-google-pay`
+`$ react-native link rn-gpay`
 
 ### Manual installation
 
@@ -39,12 +39,12 @@ Autolinking will just do the job.
 
 2. Append the following lines to `android/settings.gradle`:
    ```
-   include ':rn-google-pay'
-   project(':rn-google-pay').projectDir = new File(rootProject.projectDir, 	'../node_modules/rn-google-pay/android')
+   include ':rn-gpay'
+   project(':rn-gpay').projectDir = new File(rootProject.projectDir, 	'../node_modules/rn-gpay/android')
    ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
    ```
-     implementation project(':rn-google-pay')
+     implementation project(':rn-gpay')
    ```
 
 ### Enable Android Pay in your Manifest
@@ -60,7 +60,7 @@ To enable Google Pay in your app, you need to add the following Google Pay API m
 ## Usage
 
 ```javascript
-import { GooglePay } from 'rn-google-pay'
+import { GooglePay } from 'rn-gpay'
 
 const allowedCardNetworks = ['VISA', 'MASTERCARD']
 const allowedCardAuthMethods = ['PAN_ONLY', 'CRYPTOGRAM_3DS']

@@ -177,7 +177,7 @@ public class RNGooglePayModule extends ReactContextBaseJavaModule {
       requestPaymentPromise.resolve(paymentInformation);
     }catch (Exception e){
       Log.e(TAG, "[GooglePay] handlePaymentSuccess error: " + e.toString());
-      promise.reject("PAYMENT_DATA_REQUEST_JSON", "Unexpected Error Occurred");
+      // promise.reject("PAYMENT_DATA_REQUEST_JSON", "Unexpected Error Occurred");
       return;
     }
   }
